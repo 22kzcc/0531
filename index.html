@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雙手中英字卡對對碰</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div id="start-menu">
+    <div class="menu-box">
+      <h1>✨ 中英字卡對對碰 ✨</h1>
+      
+      <div class="instructions-box">
+        <h3>🎮 遊戲玩法說明 🎮</h3>
+        <ul>
+          <li><strong>移動指標：</strong> 舉起手掌面對鏡頭，畫面上會出現控制光圈。</li>
+          <li><strong>抓取字卡：</strong> 將光圈移到卡片上並<strong>「握拳」</strong>即可抓起移動！</li>
+          <li><strong>進行配對：</strong> 將中文卡與對應的英文卡拖曳到一起碰撞，並<strong>「張開手掌」</strong>放開。</li>
+          <li><strong>通關目標：</strong> 畫面共有 6 張字卡，成功將它們全數配對成功吧！</li>
+          <li><strong>彩蛋重置：</strong> 遊戲中隨時<strong>「雙手比讚 👍👍」</strong>持續 2 秒即可重新洗牌。</li>
+        </ul>
+      </div>
+      
+      <button id="start-btn" onclick="startGameClick()">🚀 開始挑戰 🚀</button>
+    </div>
+  </div>
+
+  <div id="ui-layer" class="hidden-ui">
+    <header>
+      <h1>✨ 雙手中英字卡對對碰 ✨</h1>
+      <div class="score-board">已配對數量：<span id="matched-count">0</span> / 6 張</div>
+    </header>
+
+    <div id="toast" class="hidden"></div>
+
+    <div id="reset-hint">
+      💡 提示：同時雙手比讚 👍鍵 👍 持續 2 秒可自動重新開始
+    </div>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
